@@ -2,9 +2,8 @@ function getFilesToBackup(lastBackup, changes) {
   return [
     ...new Set(
       changes
-        .filter((change) => change[1] > lastBackup)
-        .map((change) => change[0])
-        .sort((a, b) => a - b)
+        .filter((c) => c[1] > lastBackup)
+        .map((c) => c[0])
     ),
-  ];
+  ].sort((id1, id2) => id1 - id2);
 }
